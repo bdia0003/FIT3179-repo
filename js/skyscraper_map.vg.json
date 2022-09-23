@@ -1,8 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 800,
-    "height": 450,
-    "title": "Skyscrapers in the United States of America",
+    "width": 1600,
+    "height": 900,
+    "title": "Tallest Skyscrappers in US Cities",
     "projection": {"type": "albersUsa"},
     "background":"#151a1e",
     "config": {
@@ -19,17 +19,17 @@
       },
       {
         "data": {
-          "url": "https://raw.githubusercontent.com/bdia0003/FIT3179-repo/main/data/skyscrappers_clean.csv"
+          "url": "data/tallest_in_cities.csv"
         },
         "mark": {"type": "circle", "tooltip": {"content": "data"}, "color": "#3bc5d0"},
         "encoding": {
-          "longitude": {"field": "longitude", "type": "quantitative"},
-          "latitude": {"field": "latitude", "type": "quantitative"},
+          "longitude": {"field": "Longitude", "type": "quantitative"},
+          "latitude": {"field": "Latitude", "type": "quantitative"},
           "size": {
-            "field": "statistics/height",
+            "field": "Height",
             "type": "quantitative",
             "title": "Height (meters)",
-            "scale": {"domain": [0,600]}
+            "scale": {"domain": [0,550]}
           }
         }
       }
