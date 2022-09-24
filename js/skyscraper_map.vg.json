@@ -19,7 +19,7 @@
       },
       {
         "data": {
-          "url": "data/tallest_in_cities.csv"
+          "url": "https://raw.githubusercontent.com/bdia0003/FIT3179-repo/main/data/tallest_in_cities.csv"
         },
         "mark": {"type": "circle", "tooltip": {"content": "data"}, "color": "#3bc5d0"},
         "encoding": {
