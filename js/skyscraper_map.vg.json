@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": 1600,
   "height": 900,
-  "title": "Tallest Skyscrappers in US Cities - 2016",
+  "title": "Tallest Skyscrapers in US Cities - 2016",
   "projection": {"type": "albersUsa"},
   "background":"#151a1e",
   "config": {
