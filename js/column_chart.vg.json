@@ -44,8 +44,9 @@
     "mark": {"type": "bar", "color": "#1c5f64"},
 
     "encoding": {
-        "x": {"field": "Name", "type": "nominal", "axis": {"gridColor": "#263137"}},
-        "y": {"field": "Height", "type": "quantitative", "axis": {"gridColor": "#263137"}},
+        "x": {"field": "Name", "type": "nominal", "axis": {"gridColor": "#263137"}, "stack": null},
+        "y": {"field": "Height", "type": "quantitative", "axis": {"gridColor": "#263137"}, "stack": null},
+        
         "tooltip":  [
             {"field": "Name", "type": "nominal"},
             {"field": "Height", "type": "quantitative"}
