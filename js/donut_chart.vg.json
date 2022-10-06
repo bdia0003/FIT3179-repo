@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 400,
+    "title": "Materials used by tallest 50 skyscrappers",
+    "background":"#151a1e",
+    "config": {
+      "legend": {"labelColor": "white", "titleColor":"white", "labelFontSize": 16, "titleFontSize": 16},
+      "title": {"color": "#3bc5d0", "fontSize": 32},
+      "view": { "stroke": "transparent" }
+    },
+
+    "data": {
+        "url": "data/material_usage.csv"
+    },
+
+    "mark": {"type": "arc", "tooltip": {"content": "encoding"}, "innerRadius": 150},
+
+    "encoding": {
+        
+      "color": {"field": "Material", "type": "nominal", "scale": {"scheme": "viridis"}},
+      "theta": {"field": "n", "type": "quantitative", "title": "Number of buildings"},
+      "order": {"field": "n", "type": "quantitative", "sort": "descending"},
+      "tooltip":  [
+        {"field": "Material", "type": "nominal"},
+        {"field": "n", "type": "quantitative", "title": "Number of buildings"}
+    ]
+    }
+  }
+  

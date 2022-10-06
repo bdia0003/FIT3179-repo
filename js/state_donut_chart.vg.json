@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 400,
+    "title": "Cities with the 25 tallest skyscrapers",
+    "background":"#151a1e",
+    "config": {
+      "legend": {"labelColor": "white", "titleColor":"white", "labelFontSize": 16, "titleFontSize": 16},
+      "title": {"color": "#3bc5d0", "fontSize": 32},
+      "view": { "stroke": "transparent" }
+    },
+
+    "data": {
+        "url": "data/top25_cities.csv"
+    },
+
+    "transform": [
+    ],
+
+    "mark": {"type": "arc", "tooltip": {"content": "encoding"}, "innerRadius": 150} ,
+
+    "encoding": {
+        
+      "color": {"field": "City", "type": "nominal", "scale": {"scheme": "viridis"}},
+      "theta": {"field": "n", "type": "quantitative", "title": "Number of buildings"},
+      "order": {"field": "n", "type": "quantitative", "sort": "descending"},
+      "tooltip":  [
+        {"field": "City", "type": "nominal"},
+        {"field": "n", "type": "quantitative", "title": "Number of buildings"}
+    ]
+      
+    }
+  }
+  

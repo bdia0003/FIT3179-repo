@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 400,
+    "height": 400,
+    "title": "Ten Tallest Skyscrapers",
+    "background":"#151a1e",
+    "config": {
+        "legend": {"labelColor": "white", "titleColor":"white", "labelFontSize": 16, "titleFontSize": 16},
+        "axis": {"labelColor": "white", "titleColor": "white"},
+        "title": {"color": "#3bc5d0", "fontSize": 32},
+        "view": { "stroke": "transparent" }
+    },
+
+    "data": {
+        "url": "data/skyscrappers_clean.csv"
+    },
+
+    "transform": [
+        {"window": [{"op": "count", "as": "count"}]},
+        {"filter": "datum.count <= 25"}
+    ],
+
+    "mark": {"type": "bar", "color": "#1c5f64"},
+
+    "encoding": {
+        "x": {"field": "Name", "type": "nominal", "axis": {"gridColor": "#263137"}},
+        "y": {"field": "Height", "type": "quantitative", "axis": {"gridColor": "#263137"}},
+        "tooltip":  [
+            {"field": "Name", "type": "nominal"},
+            {"field": "Height", "type": "quantitative"}
+        ]
+
+    }
+}

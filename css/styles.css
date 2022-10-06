@@ -1,0 +1,24 @@
+#symbol_map{
+    padding-bottom: 125px;
+}
+
+#state_donut_chart{
+    padding-bottom: 125px;
+    vertical-align: top;
+}
+
+#donut_chart{
+    padding-bottom: 125px;
+    vertical-align: top;
+}
+
+#column_chart{
+    padding-bottom: 125px;
+    vertical-align: top;
+}
+
+#timebrush_map{
+    border-radius: 25px;
+    padding-bottom: 125px;
+    vertical-align: top;
+}

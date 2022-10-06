@@ -1,14 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 1600,
+  "width": 1700,
   "height": 900,
-  "title": "Tallest Skyscrappers in US Cities - 2016",
+  "title": "Tallest Skyscrapers in US Cities - 2016",
   "projection": {"type": "albersUsa"},
   "background":"#151a1e",
   "config": {
-"legend": {"labelColor": "white", "titleColor":"white"},
-"title": {"color": "#3bc5d0", "fontSize": 32}
-},
+    "legend": {"labelColor": "white", "titleColor":"white", "labelFontSize": 16, "titleFontSize": 16},
+    "title": {"color": "#3bc5d0", "fontSize": 32, "anchor": "start"},
+    "view": { "stroke": "transparent" }
+  },
   "layer": [
     {
       "data": {
@@ -40,7 +41,6 @@
           {"field": "Number of Purposes", "type": "quantitative"},
           {"field": "Year Completed", "type": "ordinal"},
           {"field": "City", "type": "nominal"},
-          {"field": "Country", "type": "nominal"},
           {"field": "Longitude", "type": "quantitative"},
           {"field": "Latitude", "type": "quantitative"}
         ]

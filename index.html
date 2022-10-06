@@ -12,15 +12,44 @@
   
 </head>
 <body style="background-color: #151a1e">
-  
-<div id="symbol_map"></div>
+
+<div id="timebrush_map"></div>
+<!--
+<div id="donut_chart"></div>
+<div id="column_chart"></div>
+<div id="state_donut_chart"></div>
+<div id="line_chart"></div>
+-->
+
 
 <script type="text/javascript">
 
-  var spec2 = "js/skyscraper_map.vg.json";
-  vegaEmbed('#symbol_map', spec2).then(function(result) {
+  var spec2 = "js/timebrush_map.vg.json";
+  vegaEmbed('#timebrush_map', spec2).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
+
+  /**
+  var spec3 = "js/donut_chart.vg.json";
+  vegaEmbed('#donut_chart', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var spec4 = "js/state_donut_chart.vg.json";
+  vegaEmbed('#state_donut_chart', spec4).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var spec5 = "js/column_chart.vg.json";
+  vegaEmbed('#column_chart', spec5).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+  var spec6 = "js/line_chart.vg.json";
+  vegaEmbed('#line_chart', spec6).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  */
 </script>
 
 </body>

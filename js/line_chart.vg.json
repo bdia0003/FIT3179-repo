@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 1700,
+    "title": "Skyscrapers built per Year",
+    "background":"#151a1e",
+    "config": {
+        "legend": {"labelColor": "white", "titleColor":"white", "labelFontSize": 16, "titleFontSize": 16},
+        "axis": {"labelColor": "white", "titleColor": "white"},
+        "title": {"color": "#3bc5d0", "fontSize": 32},
+        "view": { "stroke": "transparent" }
+    },
+
+    "data": {
+        "url": "data/skyscrappers_clean.csv"
+    },
+
+    "mark":  {"type": "area", "color": "#3bc5d0"},
+    "encoding": {
+        "x": {"field": "Year Completed", "type": "ordinal", "axis": {"gridColor": "#263137"}},
+        "y": {"aggregate":"count", "field":"ID", "type": "quantitative", "axis": {"gridColor": "#263137"}},
+        "tooltip":  [
+            {"field": "Year Completed", "type": "ordinal"},
+            {"aggregate":"count", "field":"ID", "type": "quantitative", "title": "Number of buildings"}
+        ]
+    }
+}
