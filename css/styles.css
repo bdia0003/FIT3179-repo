@@ -1,5 +1,7 @@
-#symbol_map{
+#timebrush_map{
     padding-bottom: 125px;
+    vertical-align: top;
+    width: 1700px;
 }
 
 #state_donut_chart{

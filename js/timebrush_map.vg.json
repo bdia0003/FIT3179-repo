@@ -9,65 +9,66 @@
     },
     "data": {
           "url": "data/skyscrappers_clean.csv"
-        },
-    "vconcat": [{
-    "width": 1700,
-    "height": 900,
-    "title": "Skyscrapers in US Cities - 2016",
-    "projection": {"type": "albersUsa"},
-    "layer": [
+    },
+    "vconcat": [
       {
-        "data": {
-          "url": "https://raw.githubusercontent.com/bdia0003/FIT3179-repo/main/js/ne_110m.topojson",
-          "format": {"type": "topojson", "feature": "ne_110m_admin_1_states_provinces"}
-        },
-        "mark": {"type": "geoshape", "fill": "#263137", "stroke": "lightblue"}
-      },
-      {              
-        "transform": [{"filter": {"param": "time_brush"}}],
-        "mark": {"type": "circle", "tooltip": {"content": "encoding"}, "color": "#3bc5d0"},
-        "encoding": {
-          "longitude": {"field": "Longitude", "type": "quantitative"},
-          "latitude": {"field": "Latitude", "type": "quantitative"},
-          "size": {
-            "field": "Height",
-            "type": "quantitative",
-            "title": "Height (meters)",
-            "scale": {"domain": [0,550]}
+        "width": "container",
+        "height":900,
+        "projection": {"type": "albersUsa"},
+        "layer": [
+          {
+            "data": {
+              "url": "https://raw.githubusercontent.com/bdia0003/FIT3179-repo/main/js/ne_110m.topojson",
+              "format": {"type": "topojson", "feature": "ne_110m_admin_1_states_provinces"}
+            },
+            "mark": {"type": "geoshape", "fill": "#263137", "stroke": "lightblue"}
           },
-          "tooltip": [
-            {"field": "Name", "type": "nominal"},
-            {"field": "Rank", "type": "ordinal"},
-            {"field": "Height", "type": "quantitative", "title": "Height (meters)"},
-            {"field": "Floors", "type": "quantitative"},
-            {"field": "Material", "type": "nominal"},
-            {"field": "Number of Purposes", "type": "quantitative"},
-            {"field": "Year Completed", "type": "ordinal"},
-            {"field": "City", "type": "nominal"},
-            {"field": "Longitude", "type": "quantitative"},
-            {"field": "Latitude", "type": "quantitative"}
-          ]
+          {              
+            "transform": [{"filter": {"param": "time_brush"}}],
+            "mark": {"type": "circle", "tooltip": {"content": "encoding"}, "color": "#3bc5d0"},
+            "encoding": {
+              "longitude": {"field": "Longitude", "type": "quantitative"},
+              "latitude": {"field": "Latitude", "type": "quantitative"},
+              "size": {
+                "field": "Height",
+                "type": "quantitative",
+                "title": "Height (meters)",
+                "scale": {"domain": [0,550]}
+              },
+              "tooltip": [
+                {"field": "Name", "type": "nominal"},
+                {"field": "Rank", "type": "ordinal"},
+                {"field": "Height", "type": "quantitative", "title": "Height (meters)"},
+                {"field": "Floors", "type": "quantitative"},
+                {"field": "Material", "type": "nominal"},
+                {"field": "Number of Purposes", "type": "quantitative"},
+                {"field": "Year Completed", "type": "ordinal"},
+                {"field": "City", "type": "nominal"},
+                {"field": "Longitude", "type": "quantitative"},
+                {"field": "Latitude", "type": "quantitative"}
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "width": "container",
+        "title": "Skyscrapers built per Year",
+        "mark":  {"type": "area", "color": "#3bc5d0"},
+        "params": [
+          {
+            "name": "time_brush",
+            "select": {"type": "interval", "encodings": ["x"]}
+          }
+        ],
+        "encoding": {
+            "x": {"field": "Year Completed", "type": "ordinal", "axis": {"gridColor": "#263137"}},
+            "y": {"aggregate":"count", "field":"ID", "type": "quantitative", "axis": {"gridColor": "#263137"}},
+            "tooltip":  [
+                {"field": "Year Completed", "type": "ordinal"},
+                {"aggregate":"count", "field":"ID", "type": "quantitative", "title": "Number of buildings"}
+            ]
         }
       }
     ]
-    },
-    {
-      "width": 1700,
-      "title": "Skyscrapers built per Year",
-      "mark":  {"type": "area", "color": "#3bc5d0"},
-      "params": [
-        {
-          "name": "time_brush",
-          "select": {"type": "interval", "encodings": ["x"]}
-        }
-      ],
-      "encoding": {
-          "x": {"field": "Year Completed", "type": "ordinal", "axis": {"gridColor": "#263137"}},
-          "y": {"aggregate":"count", "field":"ID", "type": "quantitative", "axis": {"gridColor": "#263137"}},
-          "tooltip":  [
-              {"field": "Year Completed", "type": "ordinal"},
-              {"aggregate":"count", "field":"ID", "type": "quantitative", "title": "Number of buildings"}
-          ]
-      }
-    }]
   }
