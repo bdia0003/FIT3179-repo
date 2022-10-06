@@ -17,7 +17,6 @@
     "mark": {"type": "arc", "tooltip": {"content": "encoding"}, "innerRadius": 150},
 
     "encoding": {
-        
       "color": {"field": "Material", "type": "nominal", "scale": {"scheme": "viridis"}},
       "theta": {"field": "n", "type": "quantitative", "title": "Number of buildings"},
       "order": {"field": "n", "type": "quantitative", "sort": "descending"},
@@ -26,5 +25,6 @@
         {"field": "n", "type": "quantitative", "title": "Number of buildings"}
     ]
     }
+
   }
   

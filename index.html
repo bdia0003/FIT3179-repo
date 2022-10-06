@@ -11,13 +11,20 @@
   <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
   
 </head>
-<body style="background-color: #151a1e">
-<H1 style="font-family: arial; color: white; font-size: 60px;">SKYSCRAPER DATA VISUALISATION</H1>\
+<body style="background-color: #263137">
+<H1 id="visualisation_title">SKYSCRAPER DATA VISUALISATION</H1>
+
+
+<div id="content_div1">
 <h2 style="font-family: arial; color: #3bc5d0; font-Size: 32px;">Skyscrapers in US Cities - 2016</h2>
-
-
-
 <div id="timebrush_map"></div>
+</div>
+
+<div id="content_div2">
+  <div id="donut_chart"></div>
+  <div id="column_chart"></div>
+  <div id="state_donut_chart"></div>
+</div>
 <!--
 <div id="donut_chart"></div>
 <div id="column_chart"></div>
@@ -33,7 +40,7 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  /**
+  
   var spec3 = "js/donut_chart.vg.json";
   vegaEmbed('#donut_chart', spec3).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
@@ -53,7 +60,7 @@
   vegaEmbed('#line_chart', spec6).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-  */
+  
 </script>
 
 </body>

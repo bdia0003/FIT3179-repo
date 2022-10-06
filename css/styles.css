@@ -1,7 +1,7 @@
 #timebrush_map{
-    padding-bottom: 125px;
     vertical-align: top;
     width: 1700px;
+    padding-bottom: 10px;
 }
 
 #state_donut_chart{
@@ -10,17 +10,37 @@
 }
 
 #donut_chart{
-    padding-bottom: 125px;
+    padding-bottom: 0;
     vertical-align: top;
 }
 
 #column_chart{
-    padding-bottom: 125px;
+    padding-bottom: 0;
     vertical-align: top;
 }
 
-#timebrush_map{
-    border-radius: 25px;
-    padding-bottom: 125px;
-    vertical-align: top;
+
+#visualisation_title{
+    font-family: arial; 
+    color: white;
+    font-size: 60px;
+    background-color: #151a1e;
+    border-radius: 12px;
+    width: 1886px;
+}
+
+#content_div1{
+    padding-top: 0px;
+    width: 1886px;
+    background-color: #151a1e;
+    border-radius: 12px;
+    margin-bottom: 100px;
+}
+
+#content_div2{
+    padding-top: 8px;
+    width: 1886px;
+    background-color: #151a1e;
+    border-radius: 12px;
+    margin-bottom: 50px;
 }

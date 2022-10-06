@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": 400,
     "height": 400,
-    "title": "Ten Tallest Skyscrapers",
+    "title": "Tallest Skyscrapers",
     "background":"#151a1e",
     "config": {
         "legend": {"labelColor": "white", "titleColor":"white", "labelFontSize": 16, "titleFontSize": 16},
@@ -15,9 +15,30 @@
         "url": "data/skyscrappers_clean.csv"
     },
 
+    "params": [
+        {
+          "name": "num_buildings",
+          "value": 10,
+          "bind": {
+            "input": "select",
+            "options": [
+              10,
+              25,
+              40
+            ],
+            "labels": [
+              "Tallest 10",
+              "Tallest 20",
+              "Tallest 40"
+            ]
+            
+          }
+        }
+      ],
+  
     "transform": [
         {"window": [{"op": "count", "as": "count"}]},
-        {"filter": "datum.count <= 25"}
+        {"filter": "datum.count <= num_buildings"}
     ],
 
     "mark": {"type": "bar", "color": "#1c5f64"},
