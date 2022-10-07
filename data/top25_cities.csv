@@ -1,10 +1,23 @@
-City,n
-Atlanta,1
-Chicago,7
-Cleveland,1
-Houston,2
-Las Vegas,1
-Los Angeles,1
-New York City,9
-Philadelphia,2
-Shorewood,1
+City,n,m
+Chicago,4,10
+Las Vegas,1,10
+New York City,4,10
+Shorewood,1,10
+Atlanta,1,20
+Chicago,6,20
+Houston,2,20
+Las Vegas,1,20
+Los Angeles,1,20
+New York City,8,20
+Shorewood,1,20
+Atlanta,1,30
+Chicago,7,30
+Cleveland,1,30
+Dallas,1,30
+Houston,3,30
+Las Vegas,1,30
+Los Angeles,1,30
+New York City,11,30
+Philadelphia,2,30
+Seattle,1,30
+Shorewood,1,30

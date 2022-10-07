@@ -10,7 +10,7 @@
       "labelAlign": "left"
     },
     "axis": {"labelColor": "white", "titleColor": "white"},
-    "title": {"color": "#3bc5d0", "fontSize": 32},
+    "title": {"color": "#3bc5d0", "fontSize": 32, "anchor": "start"},
     "view": {"stroke": "transparent"}
   },
   "data": {"url": "data/skyscrappers_clean.csv"},
@@ -27,10 +27,13 @@
   ],
   "hconcat": [
     {
-      "title": "Materials used by tallest 50 skyscrappers",
+      "title": "Cities with the tallest skyscrapers",
+      "data": {"url": "data/top25_cities.csv"},
+      "transform": [
+        {"filter": "toNumber(datum.m) == num_buildings"}
+      ],
       "width": 400,
-      "height": 400,
-      "data": {"url": "data/material_usage.csv"},
+      "height": 500,
       "mark": {
         "type": "arc",
         "tooltip": {"content": "encoding"},
@@ -38,7 +41,7 @@
       },
       "encoding": {
         "color": {
-          "field": "Material",
+          "field": "City",
           "type": "nominal",
           "scale": {"scheme": "viridis"}
         },
@@ -49,7 +52,7 @@
         },
         "order": {"field": "n", "type": "quantitative", "sort": "descending"},
         "tooltip": [
-          {"field": "Material", "type": "nominal"},
+          {"field": "City", "type": "nominal"},
           {"field": "n", "type": "quantitative", "title": "Number of buildings"}
         ]
       }
@@ -58,7 +61,7 @@
       "title": "Tallest Skyscrapers",
       "width": 400,
       "height": 400,
-      "data": {"url": "data/skyscrappers_clean.csv"},
+      "data": {"url": "https://raw.githubusercontent.com/bdia0003/FIT3179-repo/main/data/skyscrappers_clean.csv"},
       "transform": [
         {"window": [{"op": "count", "as": "count"}]},
         {"filter": "datum.count <= num_buildings"}
@@ -84,10 +87,13 @@
       }
     },
     {
-      "title": "Cities with the 25 tallest skyscrapers",
-      "data": {"url": "data/top25_cities.csv"},
+      "title": "Materials used by tallest skyscrappers",
       "width": 400,
-      "height": 400,
+      "height": 500,
+      "data": {"url": "data/material_usage.csv"},
+      "transform": [
+        {"filter": "toNumber(datum.m) == num_buildings"}
+      ],
       "mark": {
         "type": "arc",
         "tooltip": {"content": "encoding"},
@@ -95,7 +101,7 @@
       },
       "encoding": {
         "color": {
-          "field": "City",
+          "field": "Material",
           "type": "nominal",
           "scale": {"scheme": "viridis"}
         },
@@ -106,11 +112,13 @@
         },
         "order": {"field": "n", "type": "quantitative", "sort": "descending"},
         "tooltip": [
-          {"field": "City", "type": "nominal"},
+          {"field": "Material", "type": "nominal"},
           {"field": "n", "type": "quantitative", "title": "Number of buildings"}
         ]
       }
     }
+   
   ],
-  "resolve": {"scale": {"color": "independent"}}
+  "resolve": {"scale": {"color": "independent"}},
+  "spacing": 130
 }
