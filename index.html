@@ -20,16 +20,16 @@
 <div id="timebrush_map"></div>
 </div>
 
+<div id="content_div1">
+<div id ="donut_column"></div>
+</div>
+
+<!--
 <div id="content_div2">
   <div id="donut_chart"></div>
   <div id="column_chart"></div>
   <div id="state_donut_chart"></div>
 </div>
-<!--
-<div id="donut_chart"></div>
-<div id="column_chart"></div>
-<div id="state_donut_chart"></div>
-<div id="line_chart"></div>
 -->
 
 
@@ -55,12 +55,11 @@
   vegaEmbed('#column_chart', spec5).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-
-  var spec6 = "js/line_chart.vg.json";
-  vegaEmbed('#line_chart', spec6).then(function(result) {
+  
+  var spec6 = "js/donut_column.vg.json";
+  vegaEmbed('#donut_column', spec6).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
-  
 </script>
 
 </body>

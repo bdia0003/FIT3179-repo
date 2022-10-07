@@ -1,0 +1,116 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "#151a1e",
+  "config": {
+    "legend": {
+      "labelColor": "white",
+      "titleColor": "white",
+      "labelFontSize": 16,
+      "titleFontSize": 16,
+      "labelAlign": "left"
+    },
+    "axis": {"labelColor": "white", "titleColor": "white"},
+    "title": {"color": "#3bc5d0", "fontSize": 32},
+    "view": {"stroke": "transparent"}
+  },
+  "data": {"url": "data/skyscrappers_clean.csv"},
+  "params": [
+    {
+      "name": "num_buildings",
+      "value": 10,
+      "bind": {
+        "input": "select",
+        "options": [10, 20, 30],
+        "labels": ["Tallest 10", "Tallest 20", "Tallest 30"]
+      }
+    }
+  ],
+  "hconcat": [
+    {
+      "title": "Materials used by tallest 50 skyscrappers",
+      "width": 400,
+      "height": 400,
+      "data": {"url": "data/material_usage.csv"},
+      "mark": {
+        "type": "arc",
+        "tooltip": {"content": "encoding"},
+        "innerRadius": 150
+      },
+      "encoding": {
+        "color": {
+          "field": "Material",
+          "type": "nominal",
+          "scale": {"scheme": "viridis"}
+        },
+        "theta": {
+          "field": "n",
+          "type": "quantitative",
+          "title": "Number of buildings"
+        },
+        "order": {"field": "n", "type": "quantitative", "sort": "descending"},
+        "tooltip": [
+          {"field": "Material", "type": "nominal"},
+          {"field": "n", "type": "quantitative", "title": "Number of buildings"}
+        ]
+      }
+    },
+    {
+      "title": "Tallest Skyscrapers",
+      "width": 400,
+      "height": 400,
+      "data": {"url": "data/skyscrappers_clean.csv"},
+      "transform": [
+        {"window": [{"op": "count", "as": "count"}]},
+        {"filter": "datum.count <= num_buildings"}
+      ],
+      "mark": {"type": "bar", "color": "#1c5f64"},
+      "encoding": {
+        "x": {
+          "field": "Name",
+          "type": "nominal",
+          "axis": {"gridColor": "#263137"},
+          "stack": null
+        },
+        "y": {
+          "field": "Height",
+          "type": "quantitative",
+          "axis": {"gridColor": "#263137"},
+          "stack": null
+        },
+        "tooltip": [
+          {"field": "Name", "type": "nominal"},
+          {"field": "Height", "type": "quantitative"}
+        ]
+      }
+    },
+    {
+      "title": "Cities with the 25 tallest skyscrapers",
+      "data": {"url": "data/top25_cities.csv"},
+      "width": 400,
+      "height": 400,
+      "mark": {
+        "type": "arc",
+        "tooltip": {"content": "encoding"},
+        "innerRadius": 150
+      },
+      "encoding": {
+        "color": {
+          "field": "City",
+          "type": "nominal",
+          "scale": {"scheme": "viridis"}
+        },
+        "theta": {
+          "field": "n",
+          "type": "quantitative",
+          "title": "Number of buildings"
+        },
+        "order": {"field": "n", "type": "quantitative", "sort": "descending"},
+        "tooltip": [
+          {"field": "City", "type": "nominal"},
+          {"field": "n", "type": "quantitative", "title": "Number of buildings"}
+        ]
+      }
+    }
+  ],
+  "resolve": {"scale": {"color": "independent"}}
+}
