@@ -66,34 +66,83 @@
         {"window": [{"op": "count", "as": "count"}]},
         {"filter": "datum.count <= num_buildings"}
       ],
-      "mark": {"type": "bar", "color": "#1c5f64"},
-      "encoding": {
-        "x": {
-          "field": "Name",
-          "type": "nominal",
-          "axis": {"gridColor": "#263137"},
-          "stack": null
+      "layer": [
+        {
+          "mark": {"type": "bar", "color": "#1c5f64"},
+          "encoding": {
+            "x": {
+              "field": "Name",
+              "type": "nominal",
+              "axis": {"gridColor": "#263137"},
+              "stack": null
+            },
+            "y": {
+              "field": "Height",
+              "type": "quantitative",
+              "axis": {"gridColor": "#263137"},
+              "stack": null
+            },
+            "tooltip": [
+              {"field": "Name", "type": "nominal"},
+              {"field": "Rank", "type": "ordinal"},
+              {
+                "field": "Height",
+                "type": "quantitative",
+                "title": "Height (meters)",
+                "format": ".2f"
+              },
+              {"field": "Floors", "type": "quantitative"},
+              {"field": "Material", "type": "nominal"},
+              {"field": "Number of Purposes", "type": "quantitative"},
+              {"field": "Year Completed", "type": "ordinal"},
+              {"field": "City", "type": "nominal"},
+              {"field": "Longitude", "type": "quantitative", "format": ".4f"},
+              {"field": "Latitude", "type": "quantitative", "format": ".4f"}
+            ]
+          }
         },
-        "y": {
-          "field": "Height",
-          "type": "quantitative",
-          "axis": {"gridColor": "#263137"},
-          "stack": null
-        },
-        "tooltip": [
-            {"field": "Name", "type": "nominal"},
-            {"field": "Rank", "type": "ordinal"},
-            {"field": "Height", "type": "quantitative", "title": "Height (meters)", "format": ".2f"},
-            {"field": "Floors", "type": "quantitative"},
-            {"field": "Material", "type": "nominal"},
-            {"field": "Number of Purposes", "type": "quantitative"},
-            {"field": "Year Completed", "type": "ordinal"},
-            {"field": "City", "type": "nominal"},
-            {"field": "Longitude", "type": "quantitative", "format": ".4f"},
-            {"field": "Latitude", "type": "quantitative", "format": ".4f"}
-          
-        ]
-      }
+        {
+          "transform": [
+            {"calculate": "toNumber(datum.Height)", "as": "numHeight"},
+            {
+              "sort": [{"field": "numHeight", "order": "descending"}],
+              "window": [{"op": "rank", "as": "ranking"}]
+            },
+            {"filter": "datum.ranking == 1"},
+            {
+              "calculate": "'The tallest skyscraper in the US:; ' + datum['Name'] + ';formerly know as the Freedom Tower'",
+              "as": "text_annotation_raw"
+            },
+            {
+              "calculate": "split(datum.text_annotation_raw, ';')",
+              "as": "text_annotation"
+            }
+          ],
+          "mark": {
+            "type": "text",
+            "align": "right",
+            "dx": -8,
+            "baseline": "middle",
+            "fontStyle": "italic",
+            "color": "white"
+          },
+          "encoding": {
+            "text": {"field": "text_annotation"},
+            "x": {
+              "field": "Name",
+              "type": "nominal",
+              "axis": {"gridColor": "#263137"},
+              "stack": null
+            },
+            "y": {
+              "field": "Height",
+              "type": "quantitative",
+              "axis": {"gridColor": "#263137"},
+              "stack": null
+            }
+          }
+        }
+      ]
     },
     {
       "width": 400,
