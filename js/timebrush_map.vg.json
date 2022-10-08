@@ -39,14 +39,14 @@
                 "tooltip": [
                   {"field": "Name", "type": "nominal"},
                   {"field": "Rank", "type": "ordinal"},
-                  {"field": "Height", "type": "quantitative", "title": "Height (meters)"},
+                  {"field": "Height", "type": "quantitative", "title": "Height (meters)", "format": ".2f"},
                   {"field": "Floors", "type": "quantitative"},
                   {"field": "Material", "type": "nominal"},
                   {"field": "Number of Purposes", "type": "quantitative"},
                   {"field": "Year Completed", "type": "ordinal"},
                   {"field": "City", "type": "nominal"},
-                  {"field": "Longitude", "type": "quantitative"},
-                  {"field": "Latitude", "type": "quantitative"}
+                  {"field": "Longitude", "type": "quantitative", "format": ".4f"},
+                  {"field": "Latitude", "type": "quantitative", "format": ".4f"}
                 ]
               }},
               {
@@ -90,8 +90,8 @@
                 {"field": "Number of Purposes", "type": "quantitative"},
                 {"field": "Year Completed", "type": "ordinal"},
                 {"field": "City", "type": "nominal"},
-                {"field": "Longitude", "type": "quantitative"},
-                {"field": "Latitude", "type": "quantitative"}
+                {"field": "Longitude", "type": "quantitative", "format": ".4f"},
+                {"field": "Latitude", "type": "quantitative", "format": ".4f"}
               ]
             }
           }

@@ -21,7 +21,8 @@
       "bind": {
         "input": "select",
         "options": [10, 20, 30],
-        "labels": ["Tallest 10", "Tallest 20", "Tallest 30"]
+        "labels": ["Tallest 10", "Tallest 20", "Tallest 30"],
+        "name": "Number of buildings: "
       }
     }
   ],
@@ -81,8 +82,17 @@
           "stack": null
         },
         "tooltip": [
-          {"field": "Name", "type": "nominal"},
-          {"field": "Height", "type": "quantitative"}
+            {"field": "Name", "type": "nominal"},
+            {"field": "Rank", "type": "ordinal"},
+            {"field": "Height", "type": "quantitative", "title": "Height (meters)", "format": ".2f"},
+            {"field": "Floors", "type": "quantitative"},
+            {"field": "Material", "type": "nominal"},
+            {"field": "Number of Purposes", "type": "quantitative"},
+            {"field": "Year Completed", "type": "ordinal"},
+            {"field": "City", "type": "nominal"},
+            {"field": "Longitude", "type": "quantitative", "format": ".4f"},
+            {"field": "Latitude", "type": "quantitative", "format": ".4f"}
+          
         ]
       }
     },
