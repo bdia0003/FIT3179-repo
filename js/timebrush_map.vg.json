@@ -8,7 +8,7 @@
       "axis": {"labelColor": "white", "titleColor": "white"}
     },
     "data": {
-          "url": "data/skyscrappers_clean.csv"
+          "url": "data/tallest_in_cities.csv"
     },
     "vconcat": [
       {
@@ -99,7 +99,7 @@
       },
       {
         "width": "container",
-        "title": "Skyscrapers built per Year",
+        "title": "Tallest Skyscrapers built per Year",
         "mark":  {"type": "area", "color": "#3bc5d0"},
         "params": [
           {
