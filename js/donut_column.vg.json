@@ -7,7 +7,8 @@
       "titleColor": "white",
       "labelFontSize": 16,
       "titleFontSize": 16,
-      "labelAlign": "left"
+      "labelAlign": "left",
+      "labelLimit": 100
     },
     "axis": {"labelColor": "white", "titleColor": "white"},
     "title": {"color": "#3bc5d0", "fontSize": 32, "anchor": "start"},
@@ -28,7 +29,6 @@
   ],
   "hconcat": [
     {
-      "title": "Cities with the tallest skyscrapers",
       "data": {"url": "data/top25_cities.csv"},
       "transform": [
         {"filter": "toNumber(datum.m) == num_buildings"}
@@ -59,8 +59,7 @@
       }
     },
     {
-      "title": "Tallest Skyscrapers",
-      "width": 400,
+      "width": 500,
       "height": 400,
       "data": {"url": "https://raw.githubusercontent.com/bdia0003/FIT3179-repo/main/data/skyscrappers_clean.csv"},
       "transform": [
@@ -97,7 +96,6 @@
       }
     },
     {
-      "title": "Materials used by tallest skyscrappers",
       "width": 400,
       "height": 500,
       "data": {"url": "data/material_usage.csv"},

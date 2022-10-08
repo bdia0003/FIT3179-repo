@@ -30,7 +30,7 @@
 }
 
 #content_div1{
-    padding-top: 0px;
+    padding-top: 8px;
     width: 1886px;
     background-color: #151a1e;
     border-radius: 12px;
@@ -44,3 +44,41 @@
     border-radius: 12px;
     margin-bottom: 50px;
 }
+
+/* Create three equal columns that floats next to each other */
+.column0 {
+    float: left;
+    width: 50%;
+    padding-right: 100px;
+    padding-left: 0%;
+    padding-top: 0%;
+}
+
+.column1 {
+    float: left;
+    width: 565px;
+    padding-right: 100px;
+    padding-left: 0%;
+    padding-top: 0%;
+}
+
+.column2 {
+    float: left;
+    width: 570px;
+    padding-right: 100px;
+    padding-left: 0%;
+}
+
+.column3 {
+    float: left;
+    width: 500px;
+    padding-left: 0%;
+}
+  
+  /* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
