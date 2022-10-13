@@ -18,7 +18,7 @@
   "params": [
     {
       "name": "num_buildings",
-      "value": 10,
+      "value": 30,
       "bind": {
         "input": "select",
         "options": [10, 20, 30],

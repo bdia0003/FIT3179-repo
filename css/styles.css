@@ -4,19 +4,10 @@
     padding-bottom: 10px;
 }
 
-#state_donut_chart{
-    padding-bottom: 125px;
-    vertical-align: top;
-}
-
-#donut_chart{
-    padding-bottom: 0;
-    vertical-align: top;
-}
-
-#column_chart{
-    padding-bottom: 0;
-    vertical-align: top;
+#donut_column {
+    font-style: italic; 
+    color: white; 
+    text-align: center;
 }
 
 
