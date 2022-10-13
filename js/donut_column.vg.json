@@ -160,7 +160,7 @@
         "color": {
           "field": "Material",
           "type": "nominal",
-          "scale": {"scheme": "viridis"}
+          "scale": {"scheme": "plasma"}
         },
         "theta": {
           "field": "n",
