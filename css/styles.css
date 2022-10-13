@@ -82,3 +82,6 @@
     clear: both;
 }
 
+p {
+    text-align: justify;
+}

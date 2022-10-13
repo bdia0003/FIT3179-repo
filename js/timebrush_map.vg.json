@@ -34,7 +34,7 @@
                   "field": "Height",
                   "type": "quantitative",
                   "title": "Height (meters)",
-                  "scale": {"domain": [0,550]}
+                  "scale": {"domain": [0,200]}
                 },
                 "tooltip": [
                   {"field": "Name", "type": "nominal"},
