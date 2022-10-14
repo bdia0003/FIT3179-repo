@@ -73,13 +73,13 @@
             "x": {
               "field": "Name",
               "type": "nominal",
-              "axis": {"gridColor": "#263137"},
+              "axis": {"gridColor": "#263137", "titleFontSize": 16},
               "stack": null
             },
             "y": {
               "field": "Height",
               "type": "quantitative",
-              "axis": {"gridColor": "#263137"},
+              "axis": {"gridColor": "#263137", "titleFontSize": 16},
               "stack": null
             },
             "tooltip": [
