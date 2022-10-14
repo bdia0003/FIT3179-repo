@@ -16,7 +16,8 @@
     font-size: 60px;
     background-color: #151a1e;
     border-radius: 12px;
-    width: 1886px;
+    width: 1881px;
+    padding-left: 5px;
 }
 
 #content_div1{
@@ -40,15 +41,15 @@
     float: left;
     width: 50%;
     padding-right: 100px;
-    padding-left: 0%;
+    padding-left: 5px;
     padding-top: 0%;
 }
 
 .column1 {
     float: left;
-    width: 565px;
+    width: 555px;
     padding-right: 100px;
-    padding-left: 0%;
+    padding-left: 5px;
     padding-top: 0%;
 }
 
@@ -61,8 +62,9 @@
 
 .column3 {
     float: left;
-    width: 500px;
+    width: 545px;
     padding-left: 0%;
+    padding-right: 5px;
 }
   
   /* Clear floats after the columns */
