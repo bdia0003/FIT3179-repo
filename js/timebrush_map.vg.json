@@ -73,7 +73,8 @@
                 "dy": -8,
                 "baseline": "middle",
                 "fontStyle": "italic",
-                "color":"white"
+                "color":"white",
+                "fontSize": 16
               },
               "encoding": {"text": {"field": "text_annotation"}}
             }
@@ -108,8 +109,8 @@
           }
         ],
         "encoding": {
-            "x": {"field": "Year Completed", "type": "ordinal", "axis": {"gridColor": "#263137"}},
-            "y": {"aggregate":"count", "field":"ID", "type": "quantitative", "axis": {"gridColor": "#263137"}},
+            "x": {"field": "Year Completed", "type": "ordinal", "axis": {"gridColor": "#263137", "labelFontSize": 16, "titleFontSize": 16}},
+            "y": {"aggregate":"count", "field":"ID", "type": "quantitative", "axis": {"gridColor": "#263137", "labelFontSize": 16, "titleFontSize": 16}},
             "tooltip":  [
                 {"field": "Year Completed", "type": "ordinal"},
                 {"aggregate":"count", "field":"ID", "type": "quantitative", "title": "Number of buildings"}

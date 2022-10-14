@@ -110,7 +110,7 @@
             },
             {"filter": "datum.ranking == 1"},
             {
-              "calculate": "'The tallest skyscraper in the US:; ' + datum['Name'] + ';formerly know as the Freedom Tower'",
+              "calculate": "'The tallest skyscraper in the US:; ' + datum['Name'] + ' formerly; know as the Freedom Tower'",
               "as": "text_annotation_raw"
             },
             {
@@ -124,7 +124,8 @@
             "dx": -8,
             "baseline": "middle",
             "fontStyle": "italic",
-            "color": "white"
+            "color": "white",
+            "fontSize": 16
           },
           "encoding": {
             "text": {"field": "text_annotation"},
