@@ -5,7 +5,7 @@
       "legend": {"labelColor": "white", "titleColor":"white", "labelFontSize": 16, "titleFontSize": 16},
       "title": {"color": "#3bc5d0", "fontSize": 32, "anchor": "start"},
       "view": { "stroke": "transparent" },
-      "axis": {"labelColor": "white", "titleColor": "white"}
+      "axis": {"labelColor": "lightgray", "titleColor": "white"}
     },
     "data": {
           "url": "data/tallest_in_cities.csv"

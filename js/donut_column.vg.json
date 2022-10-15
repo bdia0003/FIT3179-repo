@@ -10,7 +10,7 @@
       "labelAlign": "left",
       "labelLimit": 100
     },
-    "axis": {"labelColor": "white", "titleColor": "white"},
+    "axis": {"labelColor": "lightgray", "titleColor": "white"},
     "title": {"color": "#3bc5d0", "fontSize": 32, "anchor": "start"},
     "view": {"stroke": "transparent"}
   },
