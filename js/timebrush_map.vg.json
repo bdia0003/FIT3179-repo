@@ -38,7 +38,6 @@
                 },
                 "tooltip": [
                   {"field": "Name", "type": "nominal"},
-                  {"field": "Rank", "type": "ordinal"},
                   {"field": "Height", "type": "quantitative", "title": "Height (meters)", "format": ".2f"},
                   {"field": "Floors", "type": "quantitative"},
                   {"field": "Material", "type": "nominal"},
@@ -84,7 +83,6 @@
               "latitude": {"field": "Latitude", "type": "quantitative"},
               "tooltip": [
                 {"field": "Name", "type": "nominal"},
-                {"field": "Rank", "type": "ordinal"},
                 {"field": "Height", "type": "quantitative", "title": "Height (meters)"},
                 {"field": "Floors", "type": "quantitative"},
                 {"field": "Material", "type": "nominal"},

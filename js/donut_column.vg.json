@@ -84,7 +84,6 @@
             },
             "tooltip": [
               {"field": "Name", "type": "nominal"},
-              {"field": "Rank", "type": "ordinal"},
               {
                 "field": "Height",
                 "type": "quantitative",
